@@ -1,0 +1,687 @@
+;======================================================================
+;  Brother Setup File
+;  Copyright (c)  2019 Brother Industries,LTD.
+;  FileName   :   HttpToUsbBridge.inf
+;  Function   :   HttpToUsbBridge
+;  I/F        :   USB
+;  OS         :   Windows 7 / 8 / 8.1 / 10 / 11 / Server 2012 / 2016 / 2019 / 2022
+;=======================================================================
+
+[Version]
+Signature  = "$Windows NT$"
+Class      = Ports
+ClassGUID  = {4d36e978-e325-11ce-bfc1-08002be10318}
+Provider   = Brother
+DriverPackageType       = PlugAndPlay
+DriverPackageDisplayName = "Brother MFC/DCP/HL devices"
+DriverVer   = 08/30/2023, 2.0.23.1
+CatalogFile = HttpToUsbBridge.cat
+
+; ========== Manufacturer/Models sections ===========
+
+[Manufacturer]
+Brother = BrDrv_WinUSB,NTx86.6.1,NTamd64.6.1
+
+; Windows 7/8 or later 32bit
+[BrDrv_WinUSB.NTx86.6.1]
+;1_2
+"Brother DCP-T220" = USB_Install1009, USB\VID_04F9&PID_0474&MI_02
+"Brother DCP-T225" = USB_Install1009, USB\VID_04F9&PID_0496&MI_02
+"Brother DCP-T420W" = USB_Install1009, USB\VID_04F9&PID_0475&MI_02
+"Brother DCP-T425W" = USB_Install1009, USB\VID_04F9&PID_0497&MI_02
+"Brother DCP-T520W" = USB_Install1009, USB\VID_04F9&PID_0476&MI_02
+"Brother DCP-T525W" = USB_Install1009, USB\VID_04F9&PID_0498&MI_02
+"Brother DCP-T720DW" = USB_Install1009, USB\VID_04F9&PID_0477&MI_02
+"Brother DCP-T725DW" = USB_Install1009, USB\VID_04F9&PID_0499&MI_02
+"Brother DCP-T820DW" = USB_Install1009, USB\VID_04F9&PID_0478&MI_02
+"Brother DCP-T825DW" = USB_Install1009, USB\VID_04F9&PID_049A&MI_02
+"Brother MFC-T920DW" = USB_Install1009, USB\VID_04F9&PID_0479&MI_03
+"Brother MFC-T925DW" = USB_Install1009, USB\VID_04F9&PID_049B&MI_03
+"Brother DCP-T428W" = USB_Install1009, USB\VID_04F9&PID_04A2&MI_02
+;1_3
+"Brother MFC-J4335DW" = USB_Install1009, USB\VID_04F9&PID_0487&MI_03
+"Brother MFC-J4340DW" = USB_Install1009, USB\VID_04F9&PID_0488&MI_03
+"Brother MFC-J4345DW" = USB_Install1009, USB\VID_04F9&PID_0489&MI_03
+"Brother MFC-J4535DW" = USB_Install1009, USB\VID_04F9&PID_0485&MI_03
+"Brother MFC-J4440DW" = USB_Install1009, USB\VID_04F9&PID_04A3&MI_03
+"Brother MFC-J4540DW" = USB_Install1009, USB\VID_04F9&PID_0486&MI_03
+"Brother MFC-J4740DW" = USB_Install1009, USB\VID_04F9&PID_0484&MI_03
+"Brother DCP-J4140N" = USB_Install1009, USB\VID_04F9&PID_048A&MI_02
+"Brother MFC-J4440N" = USB_Install1009, USB\VID_04F9&PID_048C&MI_03
+"Brother MFC-J4540N" = USB_Install1009, USB\VID_04F9&PID_048D&MI_03
+"Brother MFC-J4940DN" = USB_Install1009, USB\VID_04F9&PID_0490&MI_03
+"Brother MFC-J1205W" = USB_Install1009, USB\VID_04F9&PID_0492&MI_02
+"Brother MFC-J1215W" = USB_Install1009, USB\VID_04F9&PID_04A4&MI_02
+"Brother DCP-J1200W" = USB_Install1009, USB\VID_04F9&PID_0493&MI_02
+"Brother DCP-J1200N" = USB_Install1009, USB\VID_04F9&PID_0494&MI_02
+;1_5
+"Brother MFC-J1010DW" = USB_Install1009, USB\VID_04F9&PID_04A7&MI_03
+"Brother MFC-J1012DW" = USB_Install1009, USB\VID_04F9&PID_04A8&MI_03
+"Brother DCP-J1050DW" = USB_Install1009, USB\VID_04F9&PID_04A9&MI_02
+"Brother DCP-J526N" = USB_Install1009, USB\VID_04F9&PID_04AD&MI_02
+"Brother MFC-J739DN" = USB_Install1009, USB\VID_04F9&PID_04B9&MI_03
+"Brother DCP-J1140DW" = USB_Install1009, USB\VID_04F9&PID_04AC&MI_02
+"Brother MFC-J1170DW" = USB_Install1009, USB\VID_04F9&PID_04AB&MI_03
+"Brother DCP-J914N" = USB_Install1009, USB\VID_04F9&PID_04B1&MI_02
+"Brother DCP-J926N" = USB_Install1009, USB\VID_04F9&PID_04B2&MI_02
+"Brother MFC-J904N" = USB_Install1009, USB\VID_04F9&PID_04B7&MI_03
+"Brother MFC-J939DN" = USB_Install1009, USB\VID_04F9&PID_04BA&MI_03
+;2_0 or later
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_00B0&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_00B1&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_00AD&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_00B2&MI_02
+
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_047F&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0480&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_046C&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0482&MI_03
+
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04BB&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04BC&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04BD&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04BE&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04BF&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04C2&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04C3&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04CD&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04C4&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04C5&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04C6&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0515&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04C0&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04E3&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04C1&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04C7&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04C8&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04CF&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04C9&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04D0&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04CA&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0514&MI_02
+
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_051B&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_051A&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0519&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0516&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0501&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0500&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04FF&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04FE&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04FD&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04FC&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04FB&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04FA&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04F9&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0518&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0517&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04F8&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04F7&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04F6&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04F5&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04F4&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04F3&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04F2&MI_02
+
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0509&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_050A&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04F1&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04EC&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_050D&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04ED&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04EE&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_050E&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04EF&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04F0&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0513&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_050C&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_050B&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0511&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0512&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_050F&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0510&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_051E&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_051D&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_051C&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0508&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0507&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0506&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0505&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0504&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0503&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04EB&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04EA&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04E9&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04E8&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0521&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0520&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_051F&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0522&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0523&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0528&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0524&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0525&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0529&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_052A&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_052B&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_052C&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0533&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0534&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0535&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0536&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_052D&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0532&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04E5&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04E6&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0502&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_053B&MI_03
+
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_070F&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_070E&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_070D&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_070C&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_059D&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_059C&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_059B&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_059A&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0599&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0597&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0596&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0595&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0594&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0593&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_058D&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_058C&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_058B&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_058A&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0589&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0588&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0587&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0585&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0584&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0582&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0580&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_057F&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_057E&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_057D&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_057C&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_057B&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_057A&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0578&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0577&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0576&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0574&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0573&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_056F&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_056E&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_056D&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_056C&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_056B&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_056A&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0568&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0567&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0566&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0565&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0564&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0563&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0562&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0561&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0560&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_055F&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_055E&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_055D&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_055C&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_055B&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_055A&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0559&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0558&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0557&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0556&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0555&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0553&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0551&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0550&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_054D&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_054C&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_054B&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_054A&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0549&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0547&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0546&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0545&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0544&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0543&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0542&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0540&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_053F&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_053E&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_053D&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_053C&MI_03
+
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0495&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0704&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_048B&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_048E&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_048F&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04AF&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04B3&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04B5&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04B8&MI_03
+
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0710&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0711&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0712&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0713&MI_02
+
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0714&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0715&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0716&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0717&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0718&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0719&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_071A&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_071B&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_071C&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_071D&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_071E&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_071F&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0720&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0721&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0722&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0723&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0724&MI_02
+
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0726&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0727&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0728&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0729&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_072A&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_072B&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_072C&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_072D&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_072E&MI_03
+
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_072F&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0730&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0731&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0732&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0733&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0734&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0735&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0736&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0737&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0739&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_073A&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_073B&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_073C&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_073D&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_073E&MI_02
+
+; Windows 7/8 or later 64bit
+[BrDrv_WinUSB.NTamd64.6.1]
+;1_2
+"Brother DCP-T220" = USB_Install1009, USB\VID_04F9&PID_0474&MI_02
+"Brother DCP-T225" = USB_Install1009, USB\VID_04F9&PID_0496&MI_02
+"Brother DCP-T420W" = USB_Install1009, USB\VID_04F9&PID_0475&MI_02
+"Brother DCP-T425W" = USB_Install1009, USB\VID_04F9&PID_0497&MI_02
+"Brother DCP-T520W" = USB_Install1009, USB\VID_04F9&PID_0476&MI_02
+"Brother DCP-T525W" = USB_Install1009, USB\VID_04F9&PID_0498&MI_02
+"Brother DCP-T720DW" = USB_Install1009, USB\VID_04F9&PID_0477&MI_02
+"Brother DCP-T725DW" = USB_Install1009, USB\VID_04F9&PID_0499&MI_02
+"Brother DCP-T820DW" = USB_Install1009, USB\VID_04F9&PID_0478&MI_02
+"Brother DCP-T825DW" = USB_Install1009, USB\VID_04F9&PID_049A&MI_02
+"Brother MFC-T920DW" = USB_Install1009, USB\VID_04F9&PID_0479&MI_03
+"Brother MFC-T925DW" = USB_Install1009, USB\VID_04F9&PID_049B&MI_03
+"Brother DCP-T428W" = USB_Install1009, USB\VID_04F9&PID_04A2&MI_02
+;1_3
+"Brother MFC-J4335DW" = USB_Install1009, USB\VID_04F9&PID_0487&MI_03
+"Brother MFC-J4340DW" = USB_Install1009, USB\VID_04F9&PID_0488&MI_03
+"Brother MFC-J4345DW" = USB_Install1009, USB\VID_04F9&PID_0489&MI_03
+"Brother MFC-J4535DW" = USB_Install1009, USB\VID_04F9&PID_0485&MI_03
+"Brother MFC-J4440DW" = USB_Install1009, USB\VID_04F9&PID_04A3&MI_03
+"Brother MFC-J4540DW" = USB_Install1009, USB\VID_04F9&PID_0486&MI_03
+"Brother MFC-J4740DW" = USB_Install1009, USB\VID_04F9&PID_0484&MI_03
+"Brother DCP-J4140N" = USB_Install1009, USB\VID_04F9&PID_048A&MI_02
+"Brother MFC-J4440N" = USB_Install1009, USB\VID_04F9&PID_048C&MI_03
+"Brother MFC-J4540N" = USB_Install1009, USB\VID_04F9&PID_048D&MI_03
+"Brother MFC-J4940DN" = USB_Install1009, USB\VID_04F9&PID_0490&MI_03
+"Brother MFC-J1205W" = USB_Install1009, USB\VID_04F9&PID_0492&MI_02
+"Brother MFC-J1215W" = USB_Install1009, USB\VID_04F9&PID_04A4&MI_02
+"Brother DCP-J1200W" = USB_Install1009, USB\VID_04F9&PID_0493&MI_02
+"Brother DCP-J1200N" = USB_Install1009, USB\VID_04F9&PID_0494&MI_02
+;1_5
+"Brother MFC-J1010DW" = USB_Install1009, USB\VID_04F9&PID_04A7&MI_03
+"Brother MFC-J1012DW" = USB_Install1009, USB\VID_04F9&PID_04A8&MI_03
+"Brother DCP-J1050DW" = USB_Install1009, USB\VID_04F9&PID_04A9&MI_02
+"Brother DCP-J526N" = USB_Install1009, USB\VID_04F9&PID_04AD&MI_02
+"Brother MFC-J739DN" = USB_Install1009, USB\VID_04F9&PID_04B9&MI_03
+"Brother DCP-J1140DW" = USB_Install1009, USB\VID_04F9&PID_04AC&MI_02
+"Brother MFC-J1170DW" = USB_Install1009, USB\VID_04F9&PID_04AB&MI_03
+"Brother DCP-J914N" = USB_Install1009, USB\VID_04F9&PID_04B1&MI_02
+"Brother DCP-J926N" = USB_Install1009, USB\VID_04F9&PID_04B2&MI_02
+"Brother MFC-J904N" = USB_Install1009, USB\VID_04F9&PID_04B7&MI_03
+"Brother MFC-J939DN" = USB_Install1009, USB\VID_04F9&PID_04BA&MI_03
+;2_0 or later
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_00B0&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_00B1&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_00AD&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_00B2&MI_02
+
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_047F&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0480&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_046C&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0482&MI_03
+
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04BB&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04BC&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04BD&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04BE&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04BF&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04C2&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04C3&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04CD&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04C4&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04C5&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04C6&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0515&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04C0&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04E3&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04C1&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04C7&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04C8&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04CF&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04C9&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04D0&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04CA&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0514&MI_02
+
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_051B&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_051A&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0519&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0516&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0501&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0500&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04FF&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04FE&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04FD&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04FC&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04FB&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04FA&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04F9&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0518&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0517&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04F8&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04F7&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04F6&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04F5&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04F4&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04F3&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04F2&MI_02
+
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0509&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_050A&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04F1&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04EC&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_050D&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04ED&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04EE&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_050E&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04EF&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04F0&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0513&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_050C&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_050B&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0511&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0512&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_050F&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0510&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_051E&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_051D&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_051C&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0508&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0507&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0506&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0505&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0504&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0503&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04EB&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04EA&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04E9&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04E8&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0521&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0520&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_051F&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0522&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0523&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0528&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0524&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0525&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0529&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_052A&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_052B&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_052C&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0533&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0534&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0535&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0536&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_052D&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0532&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04E5&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04E6&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0502&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_053B&MI_03
+
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_070F&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_070E&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_070D&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_070C&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_059D&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_059C&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_059B&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_059A&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0599&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0597&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0596&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0595&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0594&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0593&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_058D&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_058C&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_058B&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_058A&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0589&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0588&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0587&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0585&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0584&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0582&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0580&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_057F&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_057E&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_057D&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_057C&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_057B&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_057A&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0578&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0577&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0576&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0574&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0573&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_056F&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_056E&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_056D&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_056C&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_056B&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_056A&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0568&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0567&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0566&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0565&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0564&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0563&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0562&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0561&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0560&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_055F&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_055E&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_055D&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_055C&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_055B&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_055A&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0559&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0558&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0557&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0556&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0555&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0553&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0551&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0550&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_054D&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_054C&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_054B&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_054A&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0549&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0547&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0546&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0545&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0544&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0543&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0542&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0540&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_053F&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_053E&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_053D&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_053C&MI_03
+
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0495&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0704&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_048B&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_048E&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_048F&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04AF&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04B3&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04B5&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_04B8&MI_03
+
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0710&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0711&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0712&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0713&MI_02
+
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0714&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0715&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0716&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0717&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0718&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0719&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_071A&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_071B&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_071C&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_071D&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_071E&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_071F&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0720&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0721&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0722&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0723&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0724&MI_02
+
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0726&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0727&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0728&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0729&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_072A&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_072B&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_072C&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_072D&MI_03
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_072E&MI_03
+
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_072F&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0730&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0731&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0732&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0733&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0734&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0735&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0736&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0737&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_0739&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_073A&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_073B&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_073C&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_073D&MI_02
+"Brother HttpToUsbBridge Port" = USB_Install1009, USB\VID_04F9&PID_073E&MI_02
+; =================== Installation ===================
+
+;[1]
+[USB_Install1009]
+Include=winusb.inf
+Needs=WINUSB.NT
+AddReg=USB_Install_Reg
+
+[USB_Install_Reg]
+HKR,,PortSubClassOther,1,01
+
+;[2]
+[USB_Install1009.Services]
+Include=winusb.inf
+AddService=WinUSB,0x00000002,WinUSB_ServiceInstall
+
+;[3]
+[WinUSB_ServiceInstall]
+DisplayName     = %BrDrv_SvcDesc%
+ServiceType     = 1
+StartType       = 3
+ErrorControl    = 1
+ServiceBinary   = %12%\WinUSB.sys
+
+;[4]
+[USB_Install1009.Wdf]
+KmdfService=WINUSB, WinUsb_Install1009
+
+[WinUSB_Install1009]
+KmdfLibraryVersion=1.9
+
+;[5]
+[USB_Install1009.HW]
+AddReg=Dev_AddReg
+
+[Dev_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{1f3c350a-9158-4e2b-942a-34476689d778}"
+
+;[6]
+[USB_Install1009.CoInstallers]
+AddReg=CoInstallers1009_AddReg
+CopyFiles=CoInstallers1009_CopyFiles
+
+[CoInstallers1009_AddReg]
+HKR,,CoInstallers32,0x00010000,"WdfCoInstaller01009.dll,WdfCoInstaller","WinUSBCoInstaller2.dll"
+
+[CoInstallers1009_CopyFiles]
+WinUSBCoInstaller2.dll
+WdfCoInstaller01009.dll
+
+[DestinationDirs]
+DefaultDestDir         = 12
+
+; ================= Source Media Section =====================
+
+;[7]
+[SourceDisksNames]
+1 = %DISK_NAME%,,,\x86
+2 = %DISK_NAME%,,,\amd64
+3 = %DISK_NAME%
+
+[SourceDisksFiles.x86]
+WinUSBCoInstaller2.dll  = 1
+WdfCoInstaller01009.dll = 1
+
+[SourceDisksFiles.amd64]
+WinUSBCoInstaller2.dll  = 2
+WdfCoInstaller01009.dll = 2
+
+; =================== Strings ===================
+
+[Strings]
+BrDrv_SvcDesc="Brother HttpToUsbBridge"
+DISK_NAME="Install Disk"
