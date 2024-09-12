@@ -1,0 +1,269 @@
+*PPD-Adobe: "4.3"
+*%================================================
+*%	Copyright(C) 2010 Brother Industries, Ltd.
+*%	"Brother Universal Printer (BR-Script3)"
+*%================================================
+
+*FormatVersion: "4.3"
+*FileVersion: "1.0"
+*LanguageEncoding: ISOLatin1
+*LanguageVersion: English
+*Product: "(Brother Universal Printer (BR-Script3))"
+*PSVersion: "(2015.105) 9"
+*Manufacturer: "Brother"
+*ModelName: "Brother Universal Printer (BR-Script3)"
+*ShortNickName: "Brother Universal Printer (BR-Script3)"
+*NickName: "Brother Universal Printer (BR-Script3)"
+*PCFileName: "BRUPS10A.PPD"
+
+
+*%==== JCL Features ==========================
+*JCLBegin:           "<1B>%-12345X@PJL JOB<0A>"
+*JCLToPSInterpreter: "@PJL ENTER LANGUAGE = POSTSCRIPT <0A>"
+*JCLEnd:             "<1B>%-12345X@PJL EOJ <0A><1B>%-12345X"
+
+*% === Installable Options ===========
+*OpenGroup: InstallableOptions/Options Installed
+
+*OpenUI *InstalledMemory/Memory Configuration: PickOne
+*DefaultInstalledMemory: 24Meg
+*InstalledMemory 24Meg/Standard 24 MB RAM: ""
+*InstalledMemory 28Meg/28 MB Total RAM: ""
+*InstalledMemory 40Meg/40 MB Total RAM: ""
+*InstalledMemory 44Meg/44 MB Total RAM: ""
+*InstalledMemory 56Meg/56 MB Total RAM: ""
+*InstalledMemory 72Meg/72 MB Total RAM: ""
+*CloseUI: *InstalledMemory
+
+*CloseGroup: InstallableOptions
+
+*% === Constraints ===================
+
+*%==== Emulations and Protocols ==========
+*Protocols: PJL TBCP
+
+*SuggestedJobTimeout: "0"
+*SuggestedWaitTimeout: "300"
+*PrintPSErrors: True
+
+
+*% === Basic Device Capabilities ============
+
+*LanguageLevel: "2"
+
+*FreeVM: "5500000"
+*VMOption 24Meg/Standard 24 MB RAM: "5500000"
+*VMOption 28Meg/28 MB Total RAM: "8000000"
+*VMOption 40Meg/40 MB Total RAM: "5400000"
+*VMOption 44Meg/44 MB Total RAM: "8000000"
+*VMOption 56Meg/56 MB Total RAM: "17400000"
+*VMOption 72Meg/72 MB Total RAM: "3800000"
+
+*ColorDevice: True
+*DefaultColorSpace: CMYK
+*AccurateScreensSupport: True
+*SuggestedJobTimeout: "0"
+*SuggestedWaitTimeout: "300"
+*SuggestedManualFeedTimeout: "60"
+*End
+*TTRasterizer: Type42
+*?TTRasterizer: "
+  save
+  42 /FontType resourcestatus
+  { pop pop (Type42)} {pop pop (None)} ifelse = flush
+  restore"
+*End
+
+*Emulators:  hpgl
+*StartEmulator_hpgl: "currentfile /hpgl statusdict /emulate get exec "
+*StopEmulator_hpgl: "<1B7F>0"
+
+*FileSystem: True
+*?FileSystem: "
+  save false
+  (%disk?%)
+  { currentdevparams dup /Writeable known
+    { /Writeable get {pop true} if }  {pop} ifelse
+  } 10 string /IODevice resourceforall
+  {(True)}{(False)} ifelse = flush
+  restore"
+*End
+*Throughput: "14"
+*Password: "(0)"
+*ExitServer: "
+  count 0 eq
+  { false } { true exch startjob } ifelse
+  not
+  { (WARNING: Cannot modify initial VM.) =
+    (Missing or invalid password.) =
+    (Please contact the author of this software.) = flush quit
+  } if"
+*End
+*Reset: "
+  count 0 eq
+  { false } { true exch startjob } ifelse
+  not
+  { (WARNING: Cannot reset printer.) =
+    (Missing or invalid password.) =
+    (Please contact the author of this software.) = flush quit
+  } if
+  systemdict /quit get exec
+  (WARNING : Printer Reset Failed.) = flush"
+*End
+
+*DefaultResolution: 600x600dpi
+*?Resolution: "
+  save currentpagedevice
+  /HWResolution get
+  aload pop exch (          ) cvs print (x) print (          ) cvs print (dpi)
+  = flush
+  restore"
+*End
+
+*% Halftone Information =================
+
+*DefaultHalftoneType: 9
+*ScreenFreq: "60.0"
+*ScreenAngle: "0.0"
+*DefaultScreenProc: Null
+*ScreenProc Null: "{}"
+
+*DefaultTransfer: Null
+*Transfer Null: "{ }"
+*Transfer Null.Inverse: "{ 1 exch sub }"
+
+
+*% Tray Selection ============
+
+*%==== Information About Media Sizes ========
+
+*% Paper Handling ===================
+
+*% Use these entries to set paper size most of the time, unless there is
+*% specific reason to use PageRegion.
+*OpenUI *PageSize: PickOne
+*OrderDependency: 30 AnySetup *PageSize
+*DefaultPageSize: A4
+*PageSize Letter/Letter: "<< /PageSize [612 792] /ImagingBBox null >> setpagedevice"
+*PageSize Legal/Legal: "<< /PageSize [612 1008] /ImagingBBox null >> setpagedevice"
+*PageSize Executive/Executive: "<< /PageSize [522 756] /ImagingBBox null >> setpagedevice"
+*PageSize A4/A4: "<< /PageSize [595 842] /ImagingBBox null >> setpagedevice"
+*PageSize A5/A5: "<< /PageSize [420 595] /ImagingBBox null >> setpagedevice"
+*PageSize A6/A6: "<< /PageSize [297 420] /ImagingBBox null >> setpagedevice"
+*PageSize B5/B5 (JIS): "<< /PageSize [516 729] /ImagingBBox null >> setpagedevice"
+*CloseUI: *PageSize
+
+*%=== Duplex ================================
+*OpenUI *Duplex: PickOne
+*OrderDependency: 25 AnySetup *Duplex
+*DefaultDuplex: None
+*Duplex DuplexTumble: "<</Duplex true /Tumble true>>setpagedevice"
+*Duplex DuplexNoTumble: "<</Duplex true /Tumble false>>setpagedevice"
+*Duplex None: "<</Duplex false /Tumble false>>setpagedevice"
+*CloseUI: *Duplex
+
+*%=== Media Type ================================
+
+
+*% These entries will set up the frame buffer. Usually used with manual feed.
+*OpenUI *PageRegion: PickOne
+*OrderDependency: 40 AnySetup *PageRegion
+*DefaultPageRegion: A4
+*PageRegion Letter/Letter: "<< /PageSize [612 792] /ImagingBBox null >> setpagedevice"
+*PageRegion Legal/Legal: "<< /PageSize [612 1008] /ImagingBBox null >> setpagedevice"
+*PageRegion Executive/Executive: "<< /PageSize [522 756] /ImagingBBox null >> setpagedevice"
+*PageRegion A4/A4: "<< /PageSize [595 842] /ImagingBBox null >> setpagedevice"
+*PageRegion A5/A5: "<< /PageSize [420 595] /ImagingBBox null >> setpagedevice"
+*PageRegion A6/A6: "<< /PageSize [297 420] /ImagingBBox null >> setpagedevice"
+*PageRegion B5/B5 (JIS): "<< /PageSize [516 729] /ImagingBBox null >> setpagedevice"
+*CloseUI: *PageRegion
+
+*% The following entries provide information about specific paper keywords.
+*DefaultImageableArea: A4
+*ImageableArea Letter/Letter: "12.0 12.12 599.88 780.0"
+*ImageableArea Legal/Legal: "12.0 12.12 599.88 996.0"
+*ImageableArea Executive/Executive: "11.99 12.12 510.0 744.0"
+*ImageableArea A4/A4: "12.0 12.24 583.08 829.92"
+*ImageableArea A5/A5: "12.0 11.88 407.4 582.96"
+*ImageableArea A6/A6: "12.0 12.6 285.48 408.0"
+*ImageableArea B5/B5 (JIS): "12.0 14.52 502.92 717.0"
+
+
+*% These provide the physical dimensions of the paper (by keyword)
+*DefaultPaperDimension: A4
+*PaperDimension Letter/Letter: "612 792"
+*PaperDimension Legal/Legal: "612 1008"
+*PaperDimension Executive/Executive: "522 756"
+*PaperDimension A4/A4: "595 842"
+*PaperDimension A5/A5: "420 595"
+*PaperDimension A6/A6: "297 420"
+*PaperDimension B5/B5 (JIS): "516 729"
+
+
+*% Print Quality Selection  ===================
+*OpenUI *Resolution/Resolution: PickOne
+*OrderDependency: 50 AnySetup *Resolution
+*DefaultResolution: 600dpi
+*Resolution	600dpi/600 dpi: "<</HWResolution [600 600] >> setpagedevice"
+*Resolution	300dpi/300 dpi: "<</HWResolution [300 300] >> setpagedevice"
+*CloseUI: *Resolution
+
+
+*% Font Information =====================
+*DefaultFont: Courier
+*Font Courier: Standard "(002.003)" Standard ROM
+*Font Courier-Bold: Standard "(002.003)" Standard ROM
+*Font Courier-BoldOblique: Standard "(002.003)" Standard ROM
+*Font Courier-Oblique: Standard "(002.003)" Standard ROM
+*Font Helvetica: Standard "(001.006)" Standard ROM
+*Font Helvetica-Bold: Standard "(001.007)" Standard ROM
+*Font Helvetica-BoldOblique: Standard "(001.007)" Standard ROM
+*Font Helvetica-Condensed: Standard "(001.001)" Standard ROM
+*Font Helvetica-Condensed-Bold: Standard "(001.002)" Standard ROM
+*Font Helvetica-Condensed-BoldObl: Standard "(001.002)" Standard ROM
+*Font Helvetica-Condensed-Oblique: Standard "(001.001)" Standard ROM
+*Font Helvetica-Narrow: Standard "(001.006)" Standard ROM
+*Font Helvetica-Narrow-Bold: Standard "(001.007)" Standard ROM
+*Font Helvetica-Narrow-BoldOblique: Standard "(001.007)" Standard ROM
+*Font Helvetica-Narrow-Oblique: Standard "(001.006)" Standard ROM
+*Font Helvetica-Oblique: Standard "(001.006)" Standard ROM
+*Font Symbol: Special "(001.007)" Special ROM
+*Font Times-Bold: Standard "(001.007)" Standard ROM
+*Font Times-BoldItalic: Standard "(001.009)" Standard ROM
+*Font Times-Italic: Standard "(001.007)" Standard ROM
+*Font Times-Roman: Standard "(001.007)" Standard ROM
+*Font ZapfChancery-MediumItalic: Standard "(001.006)" Standard ROM
+*Font ZapfDingbats: Special "(001.004)" Special ROM
+*?FontQuery: "
+  save  
+  { count 1 gt
+    { exch dup 127 string cvs (/) print print (:) print
+     /Font resourcestatus {pop pop (Yes)} {(No)} ifelse = 
+    } { exit } ifelse
+  } bind loop
+  (*) = flush restore"
+*End
+
+*?FontList: "
+   save (*) {cvn ==} 128 string /Font resourceforall
+   (*) = flush restore"
+*End
+
+*DefaultColorSep: ProcessBlack.60lpi.600x600dpi/60 lpi / 600x600 dpi
+
+*%  For 60 lpi / 600x600dpi ================================
+
+*ColorSepScreenAngle ProcessBlack.60lpi.600x600dpi/60 lpi / 600x600 dpi: "0.0"
+*ColorSepScreenAngle CustomColor.60lpi.600x600dpi/60 lpi / 600x600 dpi: "0.0"
+*ColorSepScreenAngle ProcessCyan.60lpi.600x600dpi/60 lpi / 600x600 dpi: "0.0"
+*ColorSepScreenAngle ProcessMagenta.60lpi.600x600dpi/60 lpi / 600x600 dpi: "0.0"
+*ColorSepScreenAngle ProcessYellow.60lpi.600x600dpi/60 lpi / 600x600 dpi: "0.0"
+
+*ColorSepScreenFreq ProcessBlack.60lpi.600x600dpi/60 lpi / 600x600 dpi: "60.0"
+*ColorSepScreenFreq CustomColor.60lpi.600x600dpi/60 lpi / 600x600 dpi: "60.0"
+*ColorSepScreenFreq ProcessCyan.60lpi.600x600dpi/60 lpi / 600x600 dpi: "60.0"
+*ColorSepScreenFreq ProcessMagenta.60lpi.600x600dpi/60 lpi / 600x600 dpi: "60.0"
+*ColorSepScreenFreq ProcessYellow.60lpi.600x600dpi/60 lpi / 600x600 dpi: "60.0"
+
+*% end of PPD file
+

@@ -1,5 +1,5 @@
 #This script will install any Brother printer that utilizes BR-Script (PostScript language emulation).
-#Paste the code below into admin-run Powershell to execute. Printer IP Address needs to be known. 
+#Paste the code below into admin-run Powershell to execute. Printer IP Address needs to be known and 'Drive Store' folder needs to be included in 'C:/IT_Files'. Folder is in AD's GitHub.
 #MFC-9330CDW, HL-L3280, MFC-L3770CDW are supported. 
 #Full list of supported printers @: https://support.brother.com/g/b/faqend.aspx?c=us&lang=en&prod=mfcl3770cdw_us_eu_as&ftype3=2037&faqid=faq00002747_000 
 $hostName = $env:COMPUTERNAME
