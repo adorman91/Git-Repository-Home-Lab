@@ -9,3 +9,10 @@ Add-PrinterDriver -Name "Brother Universal Printer (BR-Script3)" -InfPath 'C:\Wi
 Add-PrinterPort -Name "Printer Port" -PrinterHostAddress $ipAddress
 Add-Printer -DriverName "Brother Universal Printer (BR-Script3)" -Name "Brother Universal Printer" -PortName "Printer Port"
 Get-Printer | Format-Table
+Invoke-CimMethod -MethodName printtestpage -InputObject (Get-CimInstance win32_printer -Filter "name LIKE 'Brother Universal Printer'")
+$test = "0"
+If ($LASTEXITCODE -eq $test) {
+    ECHO "Print Job Successful"
+}
+    else {ECHO "Print Job Unsuccessful"
+}
