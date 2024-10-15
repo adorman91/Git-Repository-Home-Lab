@@ -11,10 +11,10 @@ param (
     [string]$JobTitle,
 
     [Parameter(Mandatory)]
-    [int]$Department,
+    [string]$Department,
 
     [Parameter(Mandatory)]
-    [int]$Company
+    [string]$Company
 
 )
 try {
@@ -30,9 +30,9 @@ try {
     }
 
     #Checks if the given department exists; this will be used to automatically assign a user to a group. 
-    if (-not ($ou = Get-ADOrganizationalUnit -Filter "Name -eq '$Department'")) {
+    if (-not ($ou = Get-ADOrganizationalUnit -Filter "Name -eq '$Department*'")) {
         throw "The Active Directory OU for department [$($Department)] could not be found."
-    } elseif (-not (Get-ADGroup -Filter "Name -eq '$Department")) {
+    } elseif (-not (Get-ADGroup -Filter "Name -eq '$Department*")) {
         throw "The group [$($Department)] does not exist."
     }
 
