@@ -14,6 +14,8 @@ param (
     [int]$EmployeeNumber
 )
 try {
+    #Lines 18-19 concatenate a given $FirstName and adds it to the front of $LastName.
+    #If the newly created $
     $userName = '{0}{1}' -f $FirstName.Substring(0,1), $LastName
     (Get-ADUser -Filter "samAccountName -eq '$userName'") -and ($userName -notlike "$FirstName*")
     $i = 2
